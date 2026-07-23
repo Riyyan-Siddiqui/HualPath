@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Inter:wght@400&family=JetBrains+Mono:ital,wght@0,400;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 10% 6%;
+    --foreground: 46 51% 92%;
+    --card: 36 11% 9%;
+    --card-foreground: 46 51% 92%;
+    --popover: 36 11% 9%;
+    --popover-foreground: 46 51% 92%;
+    --primary: 43 89% 38%;
+    --primary-foreground: 46 51% 92%;
+    --secondary: 40 10% 6%;
+    --secondary-foreground: 46 51% 92%;
+    --muted: 40 10% 6%;
+    --muted-foreground: 41 17% 67%;
+    --accent: 356 60% 27%;
+    --accent-foreground: 46 51% 92%;
+    --destructive: 8 50% 46%;
+    --destructive-foreground: 46 51% 92%;
+    --border: 34 14% 20%;
+    --input: 34 14% 20%;
+    --ring: 43 89% 38%;
+    --radius: 0.5rem;
+
+    --font-heading: 'EB Garamond', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-accent: 'JetBrains Mono', serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+}
