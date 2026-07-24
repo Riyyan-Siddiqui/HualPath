@@ -46,7 +46,9 @@ SECRET_KEY = 'django-insecure-i-c67$a-5lwfmd*5oxt0e6go9@lxve0kawv^$282z9t8%w1(z5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "hualpath-server.onrender.com"
+]
 
 
 # Application definition
