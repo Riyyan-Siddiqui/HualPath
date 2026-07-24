@@ -4,7 +4,7 @@ from rest_framework import status
 
 from services.trip_planner_service import TripPlannerService
 
-from server.project.project.api.serializers.request import TripPlannerSerializer
+from server.project.api.serializers.request import TripPlannerSerializer
 
 class PlanTripAPIView(APIView):
 
