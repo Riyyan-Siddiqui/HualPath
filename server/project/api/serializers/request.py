@@ -6,7 +6,7 @@ from rest_framework import serializers
 class TripPlannerSerializer(serializers.Serializer):
 
     current_location = serializers.CharField()
-    country = serializers.CharField()
+    # country = serializers.CharField()
 
     pickup_locations = serializers.ListField()
 

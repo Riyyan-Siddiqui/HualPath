@@ -19,3 +19,11 @@ class TripResponseSerializer(
     # compliance = serializers.DictField()
 
     route = serializers.DictField()
+
+    fuel = serializers.DictField()
+
+    hos = serializers.DictField()
+
+    timeline = serializers.DictField()
+
+    logs = serializers.DictField()

@@ -1,4 +1,8 @@
 from math import radians, sin, cos, sqrt, atan2
+from datetime import (
+    datetime,
+    timedelta
+)
 
 
 def calculate_distance(point1, point2):
@@ -139,3 +143,25 @@ def get_location_after_distance(
         longitude
 
     )
+
+
+
+def add_timestamps(schedule, start_time=None):
+    """Attach real datetime objects + formatted strings to each event."""
+    current_time = start_time or datetime.now()
+
+    for event in schedule:
+        arrival_time = current_time
+        duration = event.get("duration_hours", 0)
+        current_time += timedelta(hours=duration)
+        departure_time = current_time
+
+        # keep real datetimes so day-splitting can use them
+        event["arrival_dt"] = arrival_time
+        event["departure_dt"] = departure_time
+
+        event["arrival_time"] = arrival_time.strftime("%I:%M %p")
+        event["departure_time"] = departure_time.strftime("%I:%M %p")
+        event["window"] = f"{event['arrival_time']} - {event['departure_time']}"
+
+    return schedule

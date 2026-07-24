@@ -18,9 +18,18 @@ class PlanTripAPIView(APIView):
         )
 
 
-        serializer.is_valid(
-            raise_exception=True
-        )
+        # serializer.is_valid(
+        #     raise_exception=True
+        # )
+
+        if not serializer.is_valid():
+
+            print(serializer.errors)
+
+            return Response(
+                serializer.errors,
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
 
         response = (

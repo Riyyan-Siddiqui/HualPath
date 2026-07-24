@@ -4,7 +4,6 @@ from services.compliance_service import ComplianceService
 from services.eld_service import ELDService
 from services.fuel_service import FuelService
 from services.timeline_service import TimelineService
-from services.trip_service import TripService
 from services.fuel_service import FuelService
 from services.hos_service import HOSService
 from rest_framework.exceptions import ValidationError
@@ -33,11 +32,11 @@ class TripPlannerService:
         ]
 
         coordinates = []
-        country = data["country"]
+        # country = data["country"]
 
         for location in locations:
             point = (
-                GeocodingService.get_coordinates(location, country)
+                GeocodingService.get_coordinates(location)
             )
 
             coordinates.append(point)
@@ -101,15 +100,7 @@ class TripPlannerService:
             # )
 
             {
-                 "route": {
-
-                    "distance_miles":
-                    route["distance_miles"],
-
-                    "duration_hours":
-                    route["duration_hours"]
-
-                },
+                "route": route,
                 "hos": hos,
                 "fuel": fuel,
                 "timeline": timeline,

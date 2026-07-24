@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "../components/ui/badge";
 import {
   Truck,
   MapTrifold,

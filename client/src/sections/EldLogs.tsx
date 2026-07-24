@@ -1,6 +1,5 @@
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import { Moon, Truck, Coffee, Briefcase } from "@phosphor-icons/react";
+import { Badge } from "../components/ui/badge";
+import { Moon, Truck, Briefcase } from "@phosphor-icons/react";
 
 const statusKey = [
   {

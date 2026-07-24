@@ -1,15 +1,11 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
+import { Input } from ".././components/ui/input";
+import { Badge } from ".././components/ui/badge";
 import {
   Bell,
-  CaretDown,
   MagnifyingGlass,
-  Truck,
   MapPin,
   Star,
-  User,
   ClockCountdown,
 } from "@phosphor-icons/react";
 
@@ -27,9 +23,12 @@ const notifications = [
 export default function WorkspaceBar() {
   const [workspaceOpen, setWorkspaceOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
-  const [activeWorkspace, setActiveWorkspace] = useState(workspaces[0]);
+  const [activeWorkspace] = useState(workspaces[0]);
   const [notifOpen, setNotifOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  console.log(workspaceOpen)
+  console.log(userOpen)
+  console.log(activeWorkspace)
 
   return (
     <header
@@ -37,7 +36,7 @@ export default function WorkspaceBar() {
       className="h-14 bg-stone-900 border-b border-border flex items-center gap-0 px-4 relative z-10"
     >
       {/* ── Workspace Switcher ── */}
-      <div className="relative flex items-center gap-2 flex-shrink-0">
+      {/* <div className="relative flex items-center gap-2 flex-shrink-0">
         <div className="flex items-center gap-1.5 text-muted-foreground">
           <Truck weight="duotone" size={15} className="text-primary" />
         </div>
@@ -92,7 +91,7 @@ export default function WorkspaceBar() {
             ))}
           </div>
         )}
-      </div>
+      </div> */}
 
       {/* ── Breadcrumb ── */}
       <div className="hidden md:flex items-center gap-1 ml-2 text-muted-foreground flex-shrink-0">
@@ -125,7 +124,7 @@ export default function WorkspaceBar() {
           />
           <Input
             value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
+            onChange={(e: any) => setSearchValue(e.target.value)}
             placeholder="Search stops, routes, logs…"
             className="pl-8 h-8 text-xs font-mono bg-muted border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-ring focus-visible:ring-1 rounded-md"
           />
@@ -208,7 +207,7 @@ export default function WorkspaceBar() {
         </div>
 
         {/* User Menu */}
-        <div className="relative">
+        {/* <div className="relative">
           <button
             onClick={() => {
               setUserOpen((p) => !p);
@@ -261,7 +260,7 @@ export default function WorkspaceBar() {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </header>
   );

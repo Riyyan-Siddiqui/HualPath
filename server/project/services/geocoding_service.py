@@ -6,12 +6,12 @@ from django.conf import settings
 class GeocodingService:
 
     @staticmethod
-    def get_coordinates(location, country):
+    def get_coordinates(location):
 
         url = "https://graphhopper.com/api/1/geocode"
 
         params = {
-            "q": f"{location}, {country}",
+            "q": f"{location}",
             "limit": 1,
             "key": settings.GRAPHHOPPER_API_KEY
         }

@@ -37,7 +37,8 @@ class FuelService:
     def get_fuel_locations(data, route):
 
         fuel_locations = []
-        coordinates = route.get("coordinates", [])
+        coordinates = route.get("polyline", [])
+        # print(coordinates)
         distance_travelled = 0
         next_fuel_stop = FUEL_STOP_AFTER_MILES
         stop_number = 1

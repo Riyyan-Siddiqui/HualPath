@@ -1,5 +1,6 @@
 from utils import get_location_after_distance, get_location_after_time
 from services.geocoding_service import GeocodingService
+from utils import add_timestamps
 
 class TimelineService:
 
@@ -58,10 +59,15 @@ class TimelineService:
 
             timeline.append(event)
 
+        timeline = add_timestamps(
+            timeline
+        )
+
         driving_events = []
         route_events = []
 
         for event in timeline:
+            # print(event.keys())
             if "distance_miles" in event:
                 route_events.append(event)
             else:
