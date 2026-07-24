@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Badge } from "../components/ui/badge";
-import Form from "../components/sections/tripPlanning/form";
+import Form from "../components/sections/tripPlanning/Form";
 import Eyebrow from "../components/sections/tripPlanning/eyebrow";
 import {
   MapPin,
